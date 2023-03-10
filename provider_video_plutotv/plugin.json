@@ -3,7 +3,7 @@
         "id": "provider_video_plutotv",
         "name": "PlutoTV",
         "version": {
-            "current_version": "0.5.4"
+            "current_version": "0.1.0"
         },
         "provider-name": "rocky4546",
         "summary": "This is real internet television",
