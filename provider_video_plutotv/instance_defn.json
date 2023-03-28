@@ -53,7 +53,7 @@
                         "default": 1,
                         "level": 1,
                         "onChange": "lib.config.config_callbacks.update_channel_num",
-                        "help": "When channel number is not provided, will use this incrementally."
+                        "help": "Overrides the channel number starting with the number provided and incrementing by one"
                     },
                     "player-stream_type":{
                         "label": "stream_type",
@@ -94,7 +94,7 @@
                     "player-url_filter":{
                         "label": "URL Filter",
                         "type": "string",
-                        "default": "^.*(_ad/|google.com|plutotv_filler|Well_be_right|_AdPod|_Promo|channel_ad_|_filler_).*$",
+                        "default": "^.*(_ad/|google.com|plutotv_filler|Well_be_right|_AdPod|_Promo|channel_ad_|_filler_|_bumper|_backfill|_batch).*$",
                         "level": 3,
                         "help": "Only used with stream_type=internalproxy"
                     },
