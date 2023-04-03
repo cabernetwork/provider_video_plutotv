@@ -108,4 +108,8 @@ class Channels(PluginChannels):
             .format(self.plugin_obj.name, _channel_id))
         ch_dict = self.db.get_channel(_channel_id, self.plugin_obj.name, self.instance_key)
         stream_url = ch_dict['json']['stream_url']
+
+        if self.config_obj.data[self.config_section]['player-stream_type'] == 'm3u8redirect':
+            return stream_url
+
         return self.get_best_stream(stream_url, _channel_id)
