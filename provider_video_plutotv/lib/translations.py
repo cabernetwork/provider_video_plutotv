@@ -65,6 +65,7 @@ plutotv_tv_genres = {
     "Children & Family": [tvh_genres['KIDS']],
     "Classics": [tvh_genres['MOVIE']],
     "Comedy": [tvh_genres['COMEDY']],
+    "Dance": [tvh_genres['MUSIC']],
     "Documentaries": [tvh_genres['DOCUMENTARY']],
     "Drama": [tvh_genres['MOVIE']],
     "Entertainment": [tvh_genres['GAME']],

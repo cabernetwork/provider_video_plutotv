@@ -16,7 +16,7 @@
                         "type": "boolean",
                         "default": true,
                         "level": 0,
-                        "help": "Will disable if an error occurs; otherwise set to disable to disable plugin"
+                        "help": "Default: True. Will disable if an error occurs; otherwise set to disable to disable plugin"
                     },
                     "plugin_image":{
                         "label": "Image",
@@ -39,7 +39,7 @@
                         "default": "featuredImage",
                         "values": ["featuredImage", "poster", "thumbnail"],
                         "level": 1,
-                        "help": "M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
+                        "help": "Default: featuredImage. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
                     },
                     "channel-thumbnail":{
                         "label": "Channel Thumbnail",
@@ -49,28 +49,28 @@
                             "solidLogoPNG", "thumbnail", "logo",
                             "featuredImage"],
                         "level": 1,
-                        "help": "M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
+                        "help": "Default: colorLogoPNG. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
                     },                    
                     "player-tuner_count":{
                         "label": "tuner_count",
                         "type": "integer",
                         "default": 10,
                         "level": 2,
-                        "help": "Number of streams active at one time"
+                        "help": "Default: 10. Number of streams active at one time"
                     },
                     "player-send_atsc_keepalive":{
                         "label": "Send ATSC Keep-Alive",
                         "type": "boolean",
                         "default": false,
                         "level": 2,
-                        "help": "For internalpproxy, when the provider stops sending packets or the stream is being filtered for 15 seconds, will send a ATSC keep-alive msg to client"
+                        "help": "Default: False. For internalpproxy, when the provider stops sending packets or the stream is being filtered for 15 seconds, will send a ATSC keep-alive msg to client"
                     },
                     "epg-hours":{
                         "label": "EPG Hours to Pull",
                         "type": "integer",
                         "default": 14,
                         "level": 3,
-                        "help": "PlutoTV max is 14 hours including 2 hours in the past."
+                        "help": "Default: 14. PlutoTV max is 14 hours including 2 hours in the past."
                     }
                 }
             }
