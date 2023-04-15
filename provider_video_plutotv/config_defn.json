@@ -41,6 +41,15 @@
                         "level": 1,
                         "help": "Default: featuredImage. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
                     },
+                    "hdhr_id":{
+                        "label": "hdhr_id",
+                        "type": "string",
+                        "default": null,
+                        "level": 3,
+                        "writable": false,
+                        "onInit": "lib.config.config_callbacks.set_hdhomerun_id",
+                        "help": "Unique HDHomerun CRC-based hex code for this plugin"
+                    },
                     "channel-thumbnail":{
                         "label": "Channel Thumbnail",
                         "type": "list",
