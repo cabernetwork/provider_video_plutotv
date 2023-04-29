@@ -41,8 +41,11 @@ class EPG(PluginEPG):
         stime = datetime.datetime.utcnow() - datetime.timedelta(hours=2)
         # back up 2 hours
         start = str(stime.strftime('%Y-%m-%dT%H:00:00.000Z'))
-        etime = stime + datetime.timedelta(
-            hours=self.config_obj.data[self.plugin_obj.name.lower()]['epg-hours'])
+        epg_hours = self.config_obj.data[self.plugin_obj.name.lower()]['epg-hours']
+        if epg_hours > 14:
+            epg_hours = 14
+            self.logger.warning('PlutoTV EPG cannot be more than 14 hours, Recommend changing your settings.  Force using 14.')
+        etime = stime + datetime.timedelta(hours=epg_hours)
         end = str(etime.strftime('%Y-%m-%dT%H:00:00.000Z'))
         results = {}
         epg_urls = ''.join([self.plugin_obj.unc_pluto_base, '?start={}&stop={}'])
