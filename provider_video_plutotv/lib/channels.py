@@ -30,6 +30,8 @@ class Channels(PluginChannels):
         super().__init__(_instance_obj)
 
     def get_channels(self):
+        ch_db_list = self.db.get_channels(self.plugin_obj.name, self.instance_key)
+
         channels_url = ''.join([self.plugin_obj.unc_pluto_base, '.json'])
         ch_json = self.get_uri_json_data(channels_url)
         ch_list = []
@@ -50,9 +52,9 @@ class Channels(PluginChannels):
                     and channel_dict["name"] != "Announcement"
                     and not channel_dict['onDemand']):
 
-                hd = 0
                 ch_id = str(channel_dict['_id'])
-                ch_callsign = channel_dict['name']
+                ch_db_data = ch_db_list.get(ch_id)
+
                 thumbnail = None
                 thumbnail_size = None
                 for tn in [self.config_obj.data[self.plugin_obj.name.lower()]['channel-thumbnail'],
@@ -60,8 +62,21 @@ class Channels(PluginChannels):
                            "solidLogoPNG", "thumbnail", "logo", "featuredImage"]:
                     if tn in channel_dict.keys():
                         thumbnail = channel_dict[tn]['path']
-                        thumbnail_size = self.get_thumbnail_size(thumbnail, ch_id)
                         break
+                
+                if ch_db_data:
+                    enabled = ch_db_data[0]['enabled']
+                    hd = ch_db_data[0]['json']['HD']
+                    if ch_db_data[0]['json']['thumbnail'] == thumbnail:
+                        thumbnail_size = ch_db_data[0]['json']['thumbnail_size']
+                    else:
+                        thumbnail_size = self.get_thumbnail_size(thumbnail, ch_id)
+                else:
+                    enabled = True
+                    hd = 0
+                    thumbnail_size = self.get_thumbnail_size(thumbnail, ch_id)
+
+                ch_callsign = channel_dict['name']
 
                 stream_url = channel_dict['stitched']['urls'][0]['url']
                 stream_url = stream_url \
@@ -87,7 +102,7 @@ class Channels(PluginChannels):
 
                 channel = {
                     'id': ch_id,
-                    'enabled': True,
+                    'enabled': enabled,
                     'callsign': ch_callsign,
                     'number': channel,
                     'name': friendly_name,
