@@ -72,7 +72,7 @@
                         "type": "boolean",
                         "default": true,
                         "level": 2,
-                        "help": "Default: False. For internalpproxy, when the provider stops sending packets or the stream is being filtered for 15 seconds, will send a ATSC keep-alive msg to client"
+                        "help": "Default: True. For internalpproxy, when the provider stops sending packets or the stream is being filtered for 15 seconds, will send a ATSC keep-alive msg to client"
                     },
                     "epg-hours":{
                         "label": "EPG Hours to Pull",
