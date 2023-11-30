@@ -30,6 +30,8 @@ class PlutoTV(PluginObj):
         super().__init__(_plugin)
         if not self.config_obj.data[_plugin.name.lower()]['enabled']:
             return
+        # create an instance is none are present
+        self.enable_instance(self.namespace, None)
         for inst in _plugin.instances:
             self.instances[inst] = PlutoTVInstance(self, inst)
         self.unc_pluto_base = self.uncompress(translations.pluto_base)

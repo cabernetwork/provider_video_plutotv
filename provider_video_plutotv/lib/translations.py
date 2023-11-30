@@ -23,6 +23,7 @@ from lib.tvheadend.epg_category import tvh_genres
 pluto_base = 'gfpMXf5BjIU3XxoFXxLCzxHFzfkQz62QkN33yZS7yf5='
 
 plutotv_groups = {
+    'Big Brother Live': groups['REALITY'],
     'Black Voices. Black Stories.': groups['ENTERTAINMENT'],
     'Classic TV': groups['CLASSICS'],
     'Comedy': groups['COMEDY'],
@@ -53,9 +54,11 @@ plutotv_groups = {
     'Pluto TV': groups['CLASSICS'],
     'Reality': groups['REALITY'],
     'Samsung': groups['SPORTS'],
+    'Sci-Fi': groups['MYSTERY'],
     "Season's Greetings": groups['HOLIDAY'],
     'Sports': groups['SPORTS'],
     'Sports & Gaming': groups['SPORTS'],
+    'True Crime': groups['MYSTERY'],
     'Vizio': groups['MOVIES']
 }
 
@@ -65,22 +68,31 @@ plutotv_tv_genres = {
     "Children & Family": [tvh_genres['KIDS']],
     "Classics": [tvh_genres['MOVIE']],
     "Comedy": [tvh_genres['COMEDY']],
+    "Crime": [tvh_genres['THRILLER']],
     "Dance": [tvh_genres['MUSIC']],
     "Documentaries": [tvh_genres['DOCUMENTARY']],
+    "Documentary": [tvh_genres['DOCUMENTARY']],
     "Drama": [tvh_genres['MOVIE']],
     "Entertainment": [tvh_genres['GAME']],
+    "Faith & Spirituality": [tvh_genres['RELIGION']],
     "Faith and Spirituality": [tvh_genres['RELIGION']],
+    "Food & Cooking": [tvh_genres['COOKING']],
     "Horror": [tvh_genres['SF']],
     "Independent": [tvh_genres['NEWS_MAGAZINE']],
     "Instructional & Educational": [tvh_genres['EDUCATIONAL']],
     "Music": [tvh_genres['MUSIC']],
+    "Musical": [tvh_genres['MUSIC']],
     "Musicals": [tvh_genres['MUSIC']],
+    "News & Information": [tvh_genres['NEWS']],
     "News and Information": [tvh_genres['NEWS']],
     "Reality": [tvh_genres['GAME']],
     "Romance": [tvh_genres['ROMANCE']],
     "Sci-Fi & Fantasy": [tvh_genres['SF']],
     "Sports": [tvh_genres['SPORT']],
+    "Talk Show": [tvh_genres['TALK_SHOW']],
+    "Thriller": [tvh_genres['THRILLER']],
     "Thrillers": [tvh_genres['THRILLER']],
+    "Variety Show": [tvh_genres['VARIETY']],
     "No information available": None,
     "Other": None,
     "Gay & Lesbian": None
