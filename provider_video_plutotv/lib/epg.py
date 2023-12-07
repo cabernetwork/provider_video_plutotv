@@ -54,12 +54,12 @@ class EPG(PluginEPG):
             mstime = str(stime.strftime('%Y-%m-%dT23:59:00.000Z'))
             metime = str(etime.strftime('%Y-%m-%dT00:00:00.000Z'))
             url = (epg_urls.format(start, mstime))
-            results[stime.date()] = self.get_uri_data(url)
+            results[stime.date()] = self.get_uri_data(url, 2)
             url = (epg_urls.format(metime, end))
-            results[etime.date()] = self.get_uri_data(url)
+            results[etime.date()] = self.get_uri_data(url, 2)
         else:
             url = (epg_urls.format(start, end))
-            results[stime.date()] = self.get_uri_data(url)
+            results[stime.date()] = self.get_uri_data(url, 2)
         return results
 
     def refresh_programs(self, _epg_day, use_cache=True):

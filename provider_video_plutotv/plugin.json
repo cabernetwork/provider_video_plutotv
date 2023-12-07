@@ -3,7 +3,7 @@
         "id": "provider_video_plutotv",
         "name": "PlutoTV",
         "version": {
-            "current": "0.1.10"
+            "current": "0.1.11"
         },
         "requires": [{
             "cabernet": {

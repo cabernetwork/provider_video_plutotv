@@ -33,7 +33,7 @@ class Channels(PluginChannels):
         ch_db_list = self.db.get_channels(self.plugin_obj.name, self.instance_key)
 
         channels_url = ''.join([self.plugin_obj.unc_pluto_base, '.json'])
-        ch_json = self.get_uri_json_data(channels_url)
+        ch_json = self.get_uri_json_data(channels_url, 2)
         ch_list = []
         if ch_json is None or len(ch_json) == 0:
             self.logger.warning(
