@@ -11,3 +11,4 @@ label = PlutoTV Instance
 To get an effective recording, you need to do two things:
 1. Use the internalproxy stream type.  This will remove bad DTS/PTS segments.
 2. Some channels are not live (like Star Trek). For these channels, each episode has a unique DTS/PTS, which means going across episodes can lead to issues.  Best method is to only record within the episode timeline.  Detailed start and stop times can be adjusted in seconds using the "Start/End Time Adjustment" settings in the instance allowing a near perfect start time.  Video segments are normally around 6 seconds, so you only need to get within that range to hit the beginning of an episode.
+3. If you are using TVHeadend and doing a Forced Scan, it is recommended to disable URL Filtering in Cabernet before running the scan.  Once the scan completes, re-enable the URL Filter.
