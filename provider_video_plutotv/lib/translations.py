@@ -23,10 +23,13 @@ from lib.tvheadend.epg_category import tvh_genres
 pluto_base = 'gfpMXf5BjIU3XxoFXxLCzxHFzfkQz62QkN33yZS7yf5='
 
 plutotv_groups = {
+    'Animals + Nature': groups['DOCUMENTARIES'],
+    'Anime': groups['KIDS'],
     'Big Brother Live': groups['REALITY'],
     'Black Voices. Black Stories.': groups['ENTERTAINMENT'],
     'Classic TV': groups['CLASSICS'],
     'Comedy': groups['COMEDY'],
+    'Competition Reality': groups['SPORTS'],
     'Crime': groups['MYSTERY'],
     'Curiosity': groups['DOCUMENTARIES'],
     'Daytime TV': groups['LIFESTYLE'],
@@ -37,8 +40,10 @@ plutotv_groups = {
     'Food': groups['LIFESTYLE'],
     'Game Shows': groups['GAMING'],
     'Gaming + Anime': groups['GAMING'],
-    'Home + DIY': groups['DIY'],
+    'History + Science': groups['DOCUMENTARIES'],
     'Home': groups['DIY'],
+    'Home + DIY': groups['DIY'],
+    'Home + Food': groups['LIFESTYLE'],
     'Kids': groups['KIDS'],
     'Local': groups['NEWS'],
     'Life + Style': groups['LIFESTYLE'],
@@ -47,6 +52,7 @@ plutotv_groups = {
     'Motor': groups['SPORTS'],
     'Movies': groups['MOVIES'],
     'Music': groups['MUSIC'],
+    'Music Videos': groups['MUSIC'],
     'New on Pluto TV': groups['NEW'],
     'News + Opinion': groups['NEWS'],
     'News + Info': groups['NEWS'],
@@ -59,7 +65,9 @@ plutotv_groups = {
     'Sports': groups['SPORTS'],
     'Sports & Gaming': groups['SPORTS'],
     'True Crime': groups['MYSTERY'],
-    'Vizio': groups['MOVIES']
+    'Vizio': groups['MOVIES'],
+    'Westerns': groups['WESTERNS']
+
 }
 
 plutotv_tv_genres = {
@@ -77,6 +85,8 @@ plutotv_tv_genres = {
     "Faith & Spirituality": [tvh_genres['RELIGION']],
     "Faith and Spirituality": [tvh_genres['RELIGION']],
     "Food & Cooking": [tvh_genres['COOKING']],
+    "Game Show": [tvh_genres['GAME']],
+    "Home & Lifestyle": [tvh_genres['CULTURE']],
     "Horror": [tvh_genres['SF']],
     "Independent": [tvh_genres['NEWS_MAGAZINE']],
     "Instructional & Educational": [tvh_genres['EDUCATIONAL']],
@@ -85,14 +95,17 @@ plutotv_tv_genres = {
     "Musicals": [tvh_genres['MUSIC']],
     "News & Information": [tvh_genres['NEWS']],
     "News and Information": [tvh_genres['NEWS']],
+    "Paranormal": [tvh_genres['SF']],
     "Reality": [tvh_genres['GAME']],
     "Romance": [tvh_genres['ROMANCE']],
     "Sci-Fi & Fantasy": [tvh_genres['SF']],
     "Sports": [tvh_genres['SPORT']],
     "Talk Show": [tvh_genres['TALK_SHOW']],
+    "Telenovela": [tvh_genres['LANGUAGES']],
     "Thriller": [tvh_genres['THRILLER']],
     "Thrillers": [tvh_genres['THRILLER']],
     "Variety Show": [tvh_genres['VARIETY']],
+    "Western": [tvh_genres['ADVENTURE']],
     "No information available": None,
     "Other": None,
     "Gay & Lesbian": None

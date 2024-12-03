@@ -136,9 +136,9 @@
                     "player-enable_pts_resync":{
                         "label": "PTS/DTS Resync",
                         "type": "boolean",
-                        "default": true,
+                        "default": false,
                         "level": 2,
-                        "help": "Default: True. Works with internalproxy and ffmpegproxy. Corrects timing issues with the video and audio streams and makes them contiguous"
+                        "help": "Default: False. Works with internalproxy and ffmpegproxy. Corrects timing issues with the video and audio streams and makes them contiguous"
                     },
                     "player-pts_resync_type":{
                         "label": "PTS/DTS Resync Type",
