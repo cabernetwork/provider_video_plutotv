@@ -161,11 +161,6 @@ class Channels(PluginChannels):
             stream_type = channel_dict['stitched']['paths']
             stream_type = stream_type[0]['type']
             ch_id = str(channel_dict['id'])
-            if stream_type != 'hls':
-                self.logger.debug('{}:{} stream type not hls, skipping channel {}  {}' \
-                    .format(self.plugin_obj.name, self.instance_key, ch_id, channel_dict['name']))
-                continue
-            self.logger.warning(channel_dict['name'])
             ch_db_data = ch_db_list.get(ch_id)
 
             thumbnail = None
@@ -257,8 +252,17 @@ class Channels(PluginChannels):
             return
         stitcher_dict = dict(parse_qsl(stitcher_data, keep_blank_values=True))
         
+        stream_url = None
         ch_json = self.get_ch_json(session_token, _channel_id)
-        stream_url = ch_json[0]['stitched']['paths'][0]['path']
+        if ch_json:
+            ch_json = ch_json[0]
+            stream_type = ch_json['stitched']['paths']
+            stream_type = stream_type[0]['type']
+            if stream_type == 'hls':
+                stream_url = ch_json['stitched']['paths'][0]['path']
+        if not stream_url:
+            stream_url = f'/stitch/hls/channel/{_channel_id}/master.m3u8'
+
         stitcher_dict['deviceId'] = self.plugin_obj.clientid_list[0]
         stitcher_dict['sid'] = str(uuid.uuid4())
         stitcher_dict['masterJWTPassthrough'] = 'true'
