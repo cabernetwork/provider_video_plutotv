@@ -80,9 +80,9 @@
                     "player-segments_to_play":{
                         "label": "Non-VOD Segments to Start",
                         "type": "integer",
-                        "default": 4,
+                        "default": 8,
                         "level": 2,
-                        "help": "Default: 4. When starting, will play the last xxx segments. '1' means no buffering. Each increase means about 6 seconds of buffering. If the VOD flag is set in the stream, then setting is ignored."
+                        "help": "Default: 8. When starting, will play the last xxx segments. '1' means no buffering. Each increase means about 6 seconds of buffering. If the VOD flag is set in the stream, then setting is ignored."
                     },
                     "player-enable_url_filter":{
                         "label": "URL Filtering",

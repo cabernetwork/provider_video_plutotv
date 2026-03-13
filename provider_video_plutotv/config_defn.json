@@ -36,10 +36,10 @@
                     "program_thumbnail":{
                         "label": "Program Thumbnail",
                         "type": "list",
-                        "default": "featuredImage",
+                        "default": "poster",
                         "values": ["featuredImage", "poster", "thumbnail"],
                         "level": 1,
-                        "help": "Default: featuredImage. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
+                        "help": "Default: poster. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
                     },
                     "hdhr_id":{
                         "label": "hdhr_id",
@@ -53,19 +53,19 @@
                     "channel-thumbnail":{
                         "label": "Channel Thumbnail",
                         "type": "list",
-                        "default": "colorLogoPNG",
+                        "default": "hero",
                         "values": ["colorLogoPNG", "colorLogoSVG", "solidLogoSVG",
-                            "solidLogoPNG", "thumbnail", "logo",
-                            "featuredImage"],
+                            "featuredImage", "hero", "tileColor",
+                            "tileGrayscale"],
                         "level": 1,
-                        "help": "Default: colorLogoPNG. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
+                        "help": "Default: hero. M3U8 only used with subscriptions.  TVHeadend has bugs with the M3U8 file from PlutoTV. ffmpeg uses ffmpeg and ffprobe.  Internal is the most efficient and cleanest solution."
                     },                    
                     "player-tuner_count":{
                         "label": "tuner_count",
                         "type": "integer",
-                        "default": 10,
+                        "default": 5,
                         "level": 2,
-                        "help": "Default: 10. Number of streams active at one time"
+                        "help": "Default: 5. Number of streams active at one time"
                     },
                     "player-send_atsc_keepalive":{
                         "label": "Send ATSC Keep-Alive",
@@ -86,20 +86,23 @@
                         "type": "integer",
                         "default": 110,
                         "level": 3,
+                        "writable": false,
                         "help": "Default: 110. Used on internalproxy, streamlinkproxy and ffmpegproxy. Time in seconds to shutdown stream when no data comes from provider.  Should be about 4x HTTPRetries*HTTPTimeout"
                     },
                     "stream-g_concurrent_downloads":{
                         "label": "Concurrent Downloads",
                         "type": "integer",
-                        "default": 3,
+                        "default": 1,
                         "level": 3,
-                        "help": "Default: 3. Only used on internalproxy. Minimum is 0. Number of parallel video packet downloads happening at one time.  A value of one means no parallel processing.  Helps when provider requests are timing out."
+                        "writable": false,
+                        "help": "Default: 1. Only used on internalproxy. Minimum is 0. Number of parallel video packet downloads happening at one time.  A value of one means no parallel processing.  Helps when provider requests are timing out."
                     },
                     "stream-g_http_timeout":{
                         "label": "HTTP Timeout",
                         "type": "integer",
                         "default": 8,
                         "level": 3,
+                        "writable": false,
                         "help": "Default: 8. Only used on internalproxy. Time in seconds for the time to wait for the provider to respond for each HTTP video packet request"
                     },
                     "stream-g_http_retries":{
@@ -107,14 +110,15 @@
                         "type": "integer",
                         "default": 3,
                         "level": 3,
+                        "writable": false,
                         "help": "Default: 3. Only used on internalproxy. Minimum is 1. Number of times the HTTP video packet request occurs when errors are returned by provider"
                     },
                     "epg-hours":{
                         "label": "EPG Hours to Pull",
                         "type": "integer",
-                        "default": 14,
+                        "default": 16,
                         "level": 3,
-                        "help": "Default: 14. PlutoTV max is 14 hours including 2 hours in the past."
+                        "help": "Default: 16. PlutoTV max is 22 hours including 2 hours in the past."
                     }
                 }
             }

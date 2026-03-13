@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (C) 2023 ROCKY4546
+Copyright (C) 2026 ROCKY4546
 https://github.com/rocky4546
 
 This file is part of Cabernet
@@ -17,6 +17,7 @@ substantial portions of the Software.
 """
 
 import random
+import uuid
 
 from lib.plugins.plugin_obj import PluginObj
 
@@ -30,11 +31,21 @@ class PlutoTV(PluginObj):
         super().__init__(_plugin)
         if not self.config_obj.data[_plugin.name.lower()]['enabled']:
             return
-        # create an instance is none are present
+
+        self.clientid_list = []
+        for i in range(self.config_obj.data[_plugin.name.lower()]['player-tuner_count']):
+            self.clientid_list.append(str(uuid.uuid4()))
+
+        self.unc_plutotv_boot = self.uncompress(translations.plutotv_boot)
+        self.unc_plutotv_channels = self.uncompress(translations.plutotv_channels)
+        self.unc_plutotv_service = self.uncompress(translations.plutotv_service)
+        self.unc_plutotv_categories = self.uncompress(translations.plutotv_categories)
+        self.unc_plutotv_epg = self.uncompress(translations.plutotv_epg)
+
+        # create an instance if none are present
         self.enable_instance(self.namespace, None)
         for inst in _plugin.instances:
             self.instances[inst] = PlutoTVInstance(self, inst)
-        self.unc_pluto_base = self.uncompress(translations.pluto_base)
 
     def scheduler_tasks(self):
         sched_ch_hours = self.utc_to_local_time(23)
@@ -73,11 +84,7 @@ class PlutoTV(PluginObj):
             self.scheduler_db.save_trigger(
                 'EPG',
                 'Refresh {} EPG'.format(self.namespace),
-                'startup')
-            self.scheduler_db.save_trigger(
-                'EPG',
-                'Refresh {} EPG'.format(self.namespace),
                 'interval',
-                interval=200,
+                interval=320,
                 randdur=80
             )

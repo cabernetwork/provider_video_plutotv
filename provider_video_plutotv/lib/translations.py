@@ -2,7 +2,7 @@
 """
 MIT License
 
-Copyright (C) 2023 ROCKY4546
+Copyright (C) 2026 ROCKY4546
 https://github.com/rocky4546
 
 This file is part of Cabernet
@@ -20,54 +20,35 @@ substantial portions of the Software.
 from lib.tvheadend.epg_category import groups
 from lib.tvheadend.epg_category import tvh_genres
 
-pluto_base = 'gfpMXf5BjIU3XxoFXxLCzxHFzfkQz62QkN33yZS7yf5='
+plutotv_boot = 'gfpMXf5BjIUYyNUMj8aEzspQj8pNjRkMjRlMksiM'
+plutotv_channels = 'gfpMXf5BjIUKtsiNgbl7jbl+kbSFtbLKjZlEzslMtsiKj8aEzspQj8pNjRkIjNzCgbp7jNl+kbSFtbLKuNl+kbSFtbLitf5U0RMZyNtZXNrMu4WZyx7PgsnU54WG5wtKyRiMubSCybi7X6/3XN5='
+plutotv_service = 'gfpMXf5BjIU6tZnPz6nPXNrIzZ76tqC6gxdFyZrEjslMgsp6gxrIjsrKt49P5qSGXZnFXxLCzxHFzfkQz62='
+plutotv_categories = 'gfpMXf5BjIUKtsiNgbl7jbl+kbSFtbLKjZlEzslMtsiKj8aEzspQj8pNjRkIjNzCgbp7jNl3zxr8yRi/ts5='
+plutotv_epg = 'gfpMXf5BjIUKtsiNgbl7jbl+kbSFtbLKjZlEzslMtsiKj8aEzspQj8pNjRkIjNzCgbp7jRp/ybrEgbS7XKUKzxdIzcCT1qt6gxdFyZrEqbpKusPUiZpCXZdMgbUFusPU'
+plutotv_d125c = 'w8oeuqay28lMXZr3yqC8sRlMXZr3yrUMgbC7yRrM2YGe28lMXZr3yqC8sNlQyZlCX8i7y8p1txURyZLQkbpK2YGe28lMXZr3yqC8sN3Mzfa1zx7PtbUCzw2E2wiKzfi7kbMPtCU+zfpGsRi7zfi/ts5Ys4Ev0wWU2fl7yxkFkNUFtZ78sNUYgYS6yNSZgbz1gxdFtxL7XYSQXfp/yNSKvwiGyfrMyRpN2YoTw8+euqaxkbLKtn/ZyR2egqa/yYaSme+e2wWetZUI2x+egbJe0c+v2wWe2wWe2wa/tYa/2cMU2x+BwYWe2wWe2wWe2wWe2fl7yxkFXxLCtN7FsNUYgYS7yZdYyxro2cMepZdEXNhv2wWe2wWe2wWe2wWeXNrEtYS6yNSZgbz1yNiAjZp3zxdyXNrEtYSGyfr8gbS1yNiAjZS3ybhFyxURts2+vrCyiNrFkbiEtbn8sqWU29t3yfl7wYWe2wWe2wWe2wWe2f+euqahX8r7wYWe2wWe2wWe2wWe2xiItbdOmG+e2wWegbke06+v2wWe2wWe2waYXZr3gKEv'
 
 plutotv_groups = {
     'Animals + Nature': groups['DOCUMENTARIES'],
     'Anime': groups['KIDS'],
-    'Big Brother Live': groups['REALITY'],
-    'Black Voices. Black Stories.': groups['ENTERTAINMENT'],
     'Classic TV': groups['CLASSICS'],
     'Comedy': groups['COMEDY'],
     'Competition Reality': groups['SPORTS'],
-    'Crime': groups['MYSTERY'],
-    'Curiosity': groups['DOCUMENTARIES'],
-    'Daytime TV': groups['LIFESTYLE'],
+    'Daytime + Game Shows': groups['LIFESTYLE'],
     'Drama': groups['MYSTERY'],
     'En Español': groups['SPANISH'],
     'Entertainment': groups['ENTERTAINMENT'],
-    'Explore': groups['DOCUMENTARIES'],
-    'Food': groups['LIFESTYLE'],
-    'Game Shows': groups['GAMING'],
-    'Gaming + Anime': groups['GAMING'],
     'History + Science': groups['DOCUMENTARIES'],
-    'Home': groups['DIY'],
-    'Home + DIY': groups['DIY'],
     'Home + Food': groups['LIFESTYLE'],
     'Kids': groups['KIDS'],
-    'Local': groups['NEWS'],
-    'Life + Style': groups['LIFESTYLE'],
-    'Lifestyle + Culture': groups['LIFESTYLE'],
     'Local News': groups['NEWS'],
-    'Motor': groups['SPORTS'],
     'Movies': groups['MOVIES'],
-    'Music': groups['MUSIC'],
     'Music Videos': groups['MUSIC'],
-    'New on Pluto TV': groups['NEW'],
     'News + Opinion': groups['NEWS'],
-    'News + Info': groups['NEWS'],
-    'Paranormal': groups['MYSTERY'],
-    'Pluto TV': groups['CLASSICS'],
     'Reality': groups['REALITY'],
-    'Samsung': groups['SPORTS'],
     'Sci-Fi': groups['MYSTERY'],
-    "Season's Greetings": groups['HOLIDAY'],
     'Sports': groups['SPORTS'],
-    'Sports & Gaming': groups['SPORTS'],
     'True Crime': groups['MYSTERY'],
-    'Vizio': groups['MOVIES'],
     'Westerns': groups['WESTERNS']
-
 }
 
 plutotv_tv_genres = {
